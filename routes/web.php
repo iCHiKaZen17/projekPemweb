@@ -29,3 +29,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/cart', 'CartController@store')->name('cart.store');
+Route::patch('/cart/{cart}', 'CartController@update')->name('cart.update');
+Route::post('/cart/{cart}', 'CartController@destroy')->name('cart.destroy');
