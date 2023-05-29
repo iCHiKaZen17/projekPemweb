@@ -15,13 +15,11 @@ class CartController extends Controller
 
     public function update(Cart $cart){
         $cart->update(request()->all());
-
         return redirect()->back();
     }
 
     public function destroy(Cart $cart){
         $cart->delete();
-
         return redirect()->back();
     }
 }
