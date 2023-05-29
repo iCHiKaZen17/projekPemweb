@@ -13,14 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::post('/cart', 'CartController@store')->name('cart.store');
-Route::patch('/cart/{cart}', 'CartController@update')->name('cart.update');
-Route::post('/cart/{cart}', 'CartController@destroy')->name('cart.destroy');
